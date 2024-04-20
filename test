@@ -17,5 +17,21 @@ pipeline{
                 }
             }
         }
+        stage("B"){
+            steps{
+                echo "========executing B========"
+            }
+            post{
+                always{
+                    echo "========Balways========"
+                }
+                success{
+                    echo "========B executed successfully========"
+                }
+                failure{
+                    echo "========B execution failed========"
+                }
+            }
+        }
     }
 }
