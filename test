@@ -18,6 +18,92 @@ pipeline{
             }
         }
     }
+        stage("B"){
+            steps{
+                echo "========executing B========"
+            }
+            post{
+                always{
+                    echo "======== B always========"
+                }
+                success{
+                    echo "========B executed successfully========"
+                }
+                failure{
+                    echo "========B execution failed========"
+                }
+            }
+        }
+
+        stage("C"){
+            steps{
+                echo "========executing CA========"
+            }
+            post{
+                always{
+                    echo "========C always========"
+                }
+                success{
+                    echo "========C executed successfully========"
+                }
+                failure{
+                    echo "========C execution failed========"
+                }
+            }
+        }
+        stage("D"){
+            steps{
+                echo "========executing D========"
+            }
+            post{
+                always{
+                    echo "======== D always========"
+                }
+                success{
+                    echo "========D executed successfully========"
+                }
+                failure{
+                    echo "========D execution failed========"
+                }
+            }
+        }
+        stage("E"){
+            steps{
+                echo "========executing E========"
+            }
+            post{
+                always{
+                    echo "========E always========"
+                }
+                success{
+                    echo "========E executed successfully========"
+                }
+                failure{
+                    echo "========E execution failed========"
+                }
+            }
+        }
+        stage("F"){
+            steps{
+                echo "========executing F========"
+            }
+            post{
+                always{
+                    echo "========F always========"
+                }
+                success{
+                    echo "========F executed successfully========"
+                }
+                failure{
+                    echo "========AF execution failed========"
+                }
+            }
+        }
+    }
+    }
+    }
+    }
+    }
     post{
         always{
             echo "========always========"
