@@ -18,7 +18,7 @@ pipeline{
                 }
             }
         }
-        stage("B"){
+        stage("Unit and Integration tests"){
             steps{
                 echo "========executing B========"
             }
@@ -27,10 +27,13 @@ pipeline{
                     echo "========Balways========"
                 }
                 success{
-                    echo "========B executed successfully========"
+                    echo "========send success email========"
+                    mail to: "michelle.halls@gmail.com",
+                    subject: "Unit and integration tests successful",
+                    body: "need to send the logs as attachment"
                 }
                 failure{
-                    echo "========B execution failed========"
+                    echo "========send fail email========"
                 }
             }
         }
