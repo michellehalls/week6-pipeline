@@ -15,7 +15,7 @@ pipeline {
         }
         stage("Code Analysis") {
             steps {
-                echo "integrate a code analysis tool"
+                echo "Integrate a code analysis tool"
                 echo "SonarQube is an example of a tool which can be used on Jenkins"
             }
         }
@@ -24,10 +24,11 @@ pipeline {
                 echo "Perform a security scan of the code"
                 echo "A tool which can perform security scans is OWASP Dependency-Check"
             }
-            post{
-                always{
-                    echo "========always========"
-                }
+        }
+        post {
+            always {
+                echo "========always - security scan========"
+            }
         }
         stage("Deploy to Staging") {
             steps {
@@ -40,11 +41,10 @@ pipeline {
                 echo "Run integration tests on the staging environment"
             }
         }
-        stage("Deploy to Production"){
-            steps{
+        stage("Deploy to Production") {
+            steps {
                 echo "Deploy the application to the production server"
             }
         }
     }
-}
 }
