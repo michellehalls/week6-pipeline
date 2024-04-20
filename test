@@ -81,5 +81,21 @@ pipeline{
                 }
             }
         }
+        stage("F"){
+            steps{
+                echo "========executing F========"
+            }
+            post{
+                always{
+                    echo "========Falways========"
+                }
+                success{
+                    echo "========F executed successfully========"
+                }
+                failure{
+                    echo "========F execution failed========"
+                }
+            }
+        }
     }
 }
