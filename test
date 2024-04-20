@@ -10,22 +10,14 @@ pipeline{
                 always{
                     echo "========always========"
                 }
-                success{
-                    echo "========A executed successfully========"
-                }
-                failure{
-                    echo "========A execution failed========"
-                }
             }
         }
         stage("Unit and Integration tests"){
             steps{
-                echo "========executing B========"
+                echo "Run unit and integration tests"
+                echo "Test automation tools could include Ansible"
             }
             post{
-                always{
-                    echo "========Balways========"
-                }
                 success{
                     echo "========send success email========"
                     mail to: "michelle.halls@gmail.com",
@@ -34,10 +26,13 @@ pipeline{
                 }
                 failure{
                     echo "========send fail email========"
+                    mail to: "michelle.halls@gmail.com",
+                    subject: "Unit and integration tests failed",
+                    body: "need to send the logs as attachment"
                 }
             }
         }
-        stage("BC"){
+        stage("Code Analysis"){
             steps{
                 echo "========executing C========"
             }
