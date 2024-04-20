@@ -25,9 +25,9 @@ pipeline {
                 echo "A tool which can perform security scans is OWASP Dependency-Check"
             }
         }
-        post {
-            always {
-                echo "========always - security scan========"
+            post {
+                always {
+                    echo "========always - security scan========"
             }
         }
         stage("Deploy to Staging") {
