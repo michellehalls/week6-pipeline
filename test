@@ -65,5 +65,21 @@ pipeline{
                 }
             }
         }
+        stage("E"){
+            steps{
+                echo "========executing DE========"
+            }
+            post{
+                always{
+                    echo "========DEalways========"
+                }
+                success{
+                    echo "========E executed successfully========"
+                }
+                failure{
+                    echo "========E execution failed========"
+                }
+            }
+        }
     }
 }
