@@ -38,19 +38,17 @@ pipeline{
                 echo "SonarQube is an example of a tool which can be used on Jenkins"
             }
         }
-        stage("D"){
+        stage("Security Scan"){
             steps{
-                echo "========executing D========"
+                echo "Perform a security scan of the code"
+                echo "A tool which can perform security scans is OWASP Dependency-Check"
             }
             post{
-                always{
-                    echo "========Dalways========"
-                }
                 success{
-                    echo "========D executed successfully========"
+                    echo "========mail for successful scan========"
                 }
                 failure{
-                    echo "========D execution failed========"
+                    echo "========mail for unsuccessful scan======="
                 }
             }
         }
