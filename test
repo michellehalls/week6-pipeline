@@ -34,18 +34,8 @@ pipeline{
         }
         stage("Code Analysis"){
             steps{
-                echo "========executing C========"
-            }
-            post{
-                always{
-                    echo "========Calways========"
-                }
-                success{
-                    echo "========C executed successfully========"
-                }
-                failure{
-                    echo "========C execution failed========"
-                }
+                echo "Integrate a code analysis tool"
+                echo "SonarQube is an example of a tool which can be used on Jenkins"
             }
         }
         stage("D"){
