@@ -52,20 +52,11 @@ pipeline{
                 }
             }
         }
-        stage("E"){
+        stage("Deploy to Staging"){
             steps{
-                echo "========executing DE========"
+                echo "Deploying the application to a production server"
             }
-            post{
-                always{
-                    echo "========DEalways========"
-                }
-                success{
-                    echo "========E executed successfully========"
-                }
-                failure{
-                    echo "========E execution failed========"
-                }
+
             }
         }
         stage("F"){
@@ -73,14 +64,11 @@ pipeline{
                 echo "========executing F========"
             }
             post{
-                always{
-                    echo "========Falways========"
-                }
                 success{
-                    echo "========F executed successfully========"
+                    echo "integration tests on staging success"
                 }
                 failure{
-                    echo "========F execution failed========"
+                    echo "integration tests on staging fail"
                 }
             }
         }
