@@ -45,10 +45,16 @@ pipeline{
             }
             post{
                 success{
-                    echo "========mail for successful scan========"
+                    echo "========send success email========"
+                    mail to: "michelle.halls@gmail.com",
+                    subject: "Security scan successful",
+                    body: "need to send the logs as attachment"
                 }
                 failure{
-                    echo "========mail for unsuccessful scan======="
+                    echo "========send fail email========"
+                    mail to: "michelle.halls@gmail.com",
+                    subject: "Security scan failed",
+                    body: "need to send the logs as attachment"
                 }
             }
         }
