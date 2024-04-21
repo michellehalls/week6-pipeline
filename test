@@ -56,7 +56,24 @@ pipeline{
             steps{
                 echo "Deploying the application to a production server"
             }
-
+        }
+        stage("Integration tests on staging"){
+            steps{
+                echo "Running integration tests on the staging environment"
             }
+            post{
+                success{
+                    echo "sending email on successful tests"
+                }
+                failure{
+                    echo "sending email on failure"
+                }
+            }
+        }
+        stage("Deploy to production"){
+            steps{
+                echo "Deploy the application to the production environment"
+            }
+        }
         }
 }
