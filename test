@@ -22,7 +22,8 @@ pipeline{
                     echo "========send success email========"
                     emailext to: "michelle.halls@gmail.com",
                     body: "tes", 
-                    subject: "Unit and integration tests successful"                    
+                    subject: "Unit and integration tests successful",
+                    attachlogs: true                    
                 }
                 failure{
                     echo "========send fail email========"
