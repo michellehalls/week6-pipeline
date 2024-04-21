@@ -20,7 +20,7 @@ pipeline{
             post{
                 success{
                     echo "========send success email========"
-                    emailext to: "michelle.halls0000@outlook.com",
+                    mail to: "michelle.halls0000@outlook.com",
                     body: "tes", 
                     subject: "Unit and integration tests successful",
                     attachLog: true                    
