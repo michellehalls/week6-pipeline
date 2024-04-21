@@ -20,8 +20,10 @@ pipeline{
             post{
                 success{
                     echo "========send success email========"
-                    mail to: "michelle.halls@gmail.com",
-                    emailext attachLog: true, body: '', subject: 'Unit and integration tests successful"                    
+                    emailext to: "michelle.halls@gmail.com",
+                    attachLog: true, 
+                    body: '', 
+                    subject: 'Unit and integration tests successful"                    
                 }
                 failure{
                     echo "========send fail email========"
