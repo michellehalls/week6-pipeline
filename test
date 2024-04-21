@@ -71,12 +71,14 @@ pipeline{
                 success{
                     echo "========send success email========"
                     mail to: "michelle.halls@gmail.com",
-                    subject: "Integration tests on staging successful"
+                    subject: "Integration tests on staging successful",
+                    body: "need to send the logs as attachment"
                 }
                 failure{
                     echo "========send fail email========"
                     mail to: "michelle.halls@gmail.com",
-                    subject: "Integration tests on staging"
+                    subject: "Integration tests on staging",
+                    body: "need to send the logs as attachment"
                 }
             }
         }
