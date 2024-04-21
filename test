@@ -59,18 +59,4 @@ pipeline{
 
             }
         }
-        stage("F"){
-            steps{
-                echo "========executing F========"
-            }
-            post{
-                success{
-                    echo "integration tests on staging success"
-                }
-                failure{
-                    echo "integration tests on staging fail"
-                }
-            }
-        }
-    }
 }
