@@ -50,7 +50,7 @@ pipeline{
                 }
                 failure{
                     echo "========send fail email========"
-                    mail to: "michelle.halls@gmail.com",
+                    emailext to: "michelle.halls@gmail.com",
                     subject: "Security scan failed",
                     body: "The build log is attached",
                     attachLog: true
@@ -76,7 +76,7 @@ pipeline{
                 }
                 failure{
                     echo "========send fail email========"
-                    mail to: "michelle.halls@gmail.com",
+                    emailext to: "michelle.halls@gmail.com",
                     subject: "Integration tests on staging",
                     body: "The build log is attached",
                     attachLog: true
