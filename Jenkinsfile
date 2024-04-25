@@ -21,15 +21,16 @@ pipeline{
                 success{
                     echo "========send success email========"
                     emailext to: "michelle.halls@gmail.com",
-                    body: "test", 
+                    body: "The build log is attached", 
                     subject: "Unit and integration tests successful" ,
                     attachLog: true                
                 }
                 failure{
                     echo "========send fail email========"
-                    mail to: "michelle.halls@gmail.com",
+                    emailext to: "michelle.halls@gmail.com",
                     subject: "Unit and integration tests failed",
-                    body: "need to send the logs as attachment"
+                    body: "The build log is attached",
+                    attachLog: true
                 }
             }
         }
@@ -47,15 +48,17 @@ pipeline{
             post{
                 success{
                     echo "========send success email========"
-                    mail to: "michelle.halls@gmail.com",
+                    emailext to: "michelle.halls@gmail.com",
                     subject: "Security scan successful",
-                    body: "need to send the logs as attachment"
+                    body: "The build log is attached",
+                    attachLog: true
                 }
                 failure{
                     echo "========send fail email========"
                     mail to: "michelle.halls@gmail.com",
                     subject: "Security scan failed",
-                    body: "need to send the logs as attachment"
+                    body: "The build log is attached",
+                    attachLog: true
                 }
             }
         }
@@ -71,15 +74,17 @@ pipeline{
             post{
                 success{
                     echo "========send success email========"
-                    mail to: "michelle.halls@gmail.com",
+                    emailext to: "michelle.halls@gmail.com",
                     subject: "Integration tests on staging successful",
-                    body: "need to send the logs as attachment"
+                    body: "The build log is attached",
+                    attachLog: true
                 }
                 failure{
                     echo "========send fail email========"
                     mail to: "michelle.halls@gmail.com",
                     subject: "Integration tests on staging",
-                    body: "need to send the logs as attachment"
+                    body: "The build log is attached",
+                    attachLog: true
                 }
             }
         }
