@@ -6,11 +6,6 @@ pipeline{
                 echo "Build the code using a build automation tool to compile and package the code"
                 echo "A tool which can be used here is Maven"
             }
-            post{
-                always{
-                    echo "========always========"
-                }
-            }
         }
         stage("Unit and Integration tests"){
             steps{
