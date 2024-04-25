@@ -5,7 +5,6 @@ pipeline{
             steps{
                 echo "Build the code using a build automation tool to compile and package the code"
                 echo "A tool which can be used here is Maven"
-                sh bildd fail
             }
         }
         stage("Unit and Integration tests"){
@@ -15,14 +14,12 @@ pipeline{
             }
             post{
                 success{
-                    echo "========send success email========"
                     emailext to: "michelle.halls@gmail.com",
                     body: "The build log is attached", 
                     subject: "Unit and integration tests successful" ,
                     attachLog: true                
                 }
                 failure{
-                    echo "========send fail email========"
                     emailext to: "michelle.halls@gmail.com",
                     subject: "Unit and integration tests failed",
                     body: "The build log is attached",
@@ -43,14 +40,12 @@ pipeline{
             }
             post{
                 success{
-                    echo "========send success email========"
                     emailext to: "michelle.halls@gmail.com",
                     subject: "Security scan successful",
                     body: "The build log is attached",
                     attachLog: true
                 }
                 failure{
-                    echo "========send fail email========"
                     emailext to: "michelle.halls@gmail.com",
                     subject: "Security scan failed",
                     body: "The build log is attached",
@@ -69,14 +64,12 @@ pipeline{
             }
             post{
                 success{
-                    echo "========send success email========"
                     emailext to: "michelle.halls@gmail.com",
                     subject: "Integration tests on staging successful",
                     body: "The build log is attached",
                     attachLog: true
                 }
                 failure{
-                    echo "========send fail email========"
                     emailext to: "michelle.halls@gmail.com",
                     subject: "Integration tests on staging",
                     body: "The build log is attached",
