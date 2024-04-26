@@ -14,13 +14,13 @@ pipeline{
             }
             post{
                 success{
-                    emailext to: "michelle.halls@gmail.com",
+                    emailext to: "michelle.halls987321@gmail.com",
                     body: "The build log is attached", 
                     subject: "Unit and integration tests successful" ,
                     attachLog: true                
                 }
                 failure{
-                    emailext to: "michelle.halls@gmail.com",
+                    emailext to: "michelle.halls987321@gmail.com",
                     subject: "Unit and integration tests failed",
                     body: "The build log is attached",
                     attachLog: true
@@ -40,13 +40,13 @@ pipeline{
             }
             post{
                 success{
-                    emailext to: "michelle.halls@gmail.com",
+                    emailext to: "michelle.halls987321@gmail.com",
                     subject: "Security scan successful",
                     body: "The build log is attached",
                     attachLog: true
                 }
                 failure{
-                    emailext to: "michelle.halls@gmail.com",
+                    emailext to: "michelle.halls987321@gmail.com",
                     subject: "Security scan failed",
                     body: "The build log is attached",
                     attachLog: true
@@ -64,13 +64,13 @@ pipeline{
             }
             post{
                 success{
-                    emailext to: "michelle.halls@gmail.com",
+                    emailext to: "michelle.halls987321@gmail.com",
                     subject: "Integration tests on staging successful",
                     body: "The build log is attached",
                     attachLog: true
                 }
                 failure{
-                    emailext to: "michelle.halls@gmail.com",
+                    emailext to: "michelle.halls987321@gmail.com",
                     subject: "Integration tests on staging",
                     body: "The build log is attached",
                     attachLog: true
